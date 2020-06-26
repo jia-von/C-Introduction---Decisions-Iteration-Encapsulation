@@ -9,7 +9,7 @@ namespace Projects_25_Jun_2020
             //Assignment on 25-Jun-2020: Problem 1 
                 //Write a program that prompts the user for a number (as an int) and outputs the cube of that number (raised to the third power).
                 //Telling user to input value
-                Console.WriteLine("User please add integer: ");
+                Console.WriteLine("Problem 1: User please add integer to: ");
 
                 //Convert user input value to integer
                 int firstNum = Int32.Parse( Console.ReadLine());
@@ -24,7 +24,7 @@ namespace Projects_25_Jun_2020
             /*Assignment on Problem 2: Write a program that will take in a total dollar value (as a double) 
             and a number of diners (as an int) and calculate the amount of the bill that each diner should pay (equal split).
             */
-                Console.WriteLine("Enter Dollar Value:");
+                Console.WriteLine("Problem 2: Enter Dollar Value:");
 
                 //Capture user input and convert user intput to double
                 //@link: https://www.educba.com/convert-string-to-double-in-c-sharp/
@@ -47,13 +47,20 @@ namespace Projects_25_Jun_2020
             /*Problem 3 for practice assignment: 
             Write a program that will take in a user’s age and calculate their birth year (assuming this year’s birthday has passed).
              */
+                {
+                Console.WriteLine("Problem 3: Calculate the user birth year");
+                var birthdate = Console.ReadLine();
+       
+                // Save today's date.
+                var today = DateTime.Today;
                 
-    
-        }
 
-        private static double Double(string v)
-        {
-            throw new NotImplementedException();
+                // Calculate the age.
+                var age = today.Year - birthdate.Year;
+
+                // Go back to the year the person was born in case of a leap year
+                if (birthdate.Date > today.AddYears(-age)) age--;
+                }
         }
     }
 }
